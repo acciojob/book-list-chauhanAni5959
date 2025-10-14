@@ -1,1 +1,49 @@
-/*  your css code here. If applicable */
+ body { 
+	 margin-top: 40px;
+	 background: #fff;
+ }
+    h1 {
+		text-align: center; 
+		font-size: 60px; 
+		letter-spacing: 1px;
+		margin-bottom: 40px; 
+         font-family: 'Segoe UI', Arial, sans-serif;
+		font-weight: 300; }
+    h1 span { 
+		color: #2986fb;
+		font-weight: 400; 
+	}
+    .form-group { 
+		max-width: 95%;
+		margin: 0 auto 30px auto; 
+	}
+    .form-group input { 
+		margin-bottom: 12px; 
+	}
+    #submit {
+		min-width: 120px;
+		background:lightblue;
+		
+	
+	}
+    table {
+		margin: 60px auto 0 auto;
+		width: 95% !important; 
+	}
+    .delete {
+      color: #fff;
+      background: #d9534f;
+      border: none;
+      padding: 2px 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .delete:hover {
+		background: #a94442;
+	}
+    th, td { 
+		text-align: center;
+	}
+
