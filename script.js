@@ -1,32 +1,38 @@
-const title = document.getElementById('title');
-const author = document.getElementById('author');
-const isbn = document.getElementById('isbn');
-const submit = document.getElementById('submit');
-const bookList = document.getElementById('book-list');
+document.addEventListener('DOMContentLoaded', function() {
+    const bookForm = document.getElementById('book-form');
+    const bookList = document.getElementById('book-list');
 
-submit.addEventListener('click', function(e) {
-  e.preventDefault();
-  const titleVal = title.value.trim();
-  const authorVal = author.value.trim();
-  const isbnVal = isbn.value.trim();
-  if (!titleVal || !authorVal || !isbnVal) return;
+    bookForm.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-  const row = document.createElement('tr');
-  row.innerHTML = `
-    <td>${titleVal}</td>
-    <td>${authorVal}</td>
-    <td>${isbnVal}</td>
-    <td><button class="delete">X</button></td>
-  `;
-  bookList.appendChild(row);
+        // Get input values
+        const title = document.getElementById('title').value.trim();
+        const author = document.getElementById('author').value.trim();
+        const isbn = document.getElementById('isbn').value.trim();
 
-  title.value = '';
-  author.value = '';
-  isbn.value = '';
-});
+        // Validation
+        if (title === "" || author === "" || isbn === "") {
+            alert("Please fill in all fields");
+            return;
+        }
 
-bookList.addEventListener('click', function(e) {
-  if(e.target.classList.contains('delete')) {
-    e.target.closest('tr').remove();
-  }
+        // Create row
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${title}</td>
+            <td>${author}</td>
+            <td>${isbn}</td>
+            <td><button class="delete">X</button></td>
+        `;
+        bookList.appendChild(newRow);
+
+        // Reset form
+        bookForm.reset();
+    });
+
+    bookList.addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('delete')) {
+            e.target.closest('tr').remove();
+        }
+    });
 });

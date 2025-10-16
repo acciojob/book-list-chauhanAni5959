@@ -7,29 +7,35 @@
 </head>
 
 <body>
-	<h1>My<span>Book</span>List</h1>
-  <div class="form-group">
-	 <label for="bookName">Book Name</label><br>
-    <input type="text" id="title" class="form-control" placeholder="Title">
-	  <br><label for="authorName">Author Name</label><br>
-    <input type="text" id="author" class="form-control" placeholder="Author">
-	  <br><label for="bookName">Book Name</label><br>
-    <input type="text" id="isbn" class="form-control" placeholder="ISBN#">
-	  <br>
-    <button id="submit" class="btn btn-primary mt-2">Add Book</button>
-	  <br>
-  </div>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>ISBN#</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody id="book-list"></tbody>
-  </table>
+	<div class="container">
+        <h1>My<span class="highlight">Book</span>List</h1>
+        <form id="book-form">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" class="form-control" placeholder="Book Title" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" id="author" class="form-control" placeholder="Author" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="isbn">ISBN#</label>
+                <input type="text" id="isbn" class="form-control" placeholder="ISBN" autocomplete="off">
+            </div>
+            <button type="submit" id="submit">Add Book</button>
+        </form>
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN#</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="book-list"></tbody>
+        </table>
+    </div>
   <script src="script.js"></script>
     <script type="text/javascript" src="./script.js">
 </script>
